@@ -1,0 +1,54 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body,
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #2E2E2E;
+}
+
+h1 {
+    text-align: center;
+    margin: 5rem;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.pencil-container,
+.rainbow-container,
+.grid-container,
+.main-container {
+    display: flex; 
+}
+
+.options-container {
+    background-color: #94958b;
+    box-shadow: 0 0 1rem rgb(131, 131, 131);
+    border-radius: 1rem;
+}
+
+.options-container > * {
+    margin-left: 1rem;
+}
+
+#color-picker {
+    align-self: center;
+}
+.main-container {
+    justify-content: center;
+    gap: 5rem;
+}
+.sketch-container {
+    width: 600px;
+    height: 600px;
+    background-color: #FFC4EB;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link href ="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Etch-a-Sketch</h1>
+    <div class ="main-container">
+        <div class="options-container">
+            <div class="pencil-container">
+                <p class="pencil">Pencil Color:</p>
+                <input type="color" id="color-picker">
+            </div>   
+            <div class="rainbow-container"> 
+                <p>Rainbow:</p>
+                <input type="button">
+            </div>
+            <div class="grid-container">
+                <p>Grid size:</p>
+                <input type="range" min="1" max="100">
+            </div>
+            <button>Eraser</button>
+            <button>Clear</button>
+            
+        </div>
+        <div class="sketch-container"></div>
+    </div>
+</body>
+</html>
