@@ -46,23 +46,25 @@ function createGrid (e) {
     }   
     
 }
+// Erase button
+
+
+function erase() {
+    while (sketchContainer.firstChild) {
+        sketchContainer.removeChild(sketchContainer.firstChild);
+    }
+    createGrid(24);
+};
+
+eraser.addEventListener('click', erase);
+
+// 
+
+
 
 createGrid(24);
 
-// sketchContainer.addEventListener ('mouseover', function () {
-//     div.classList.remove('square');
-//     div.classList.add('active');
-// //     div.style.cssText += "background-color: black;";
-// });
 
-// const squares = document.querySelectorAll(".square");
-
-// squares.forEach((square) => {
-//     square.addEventListener('mouseover', function (e) {
-//         div.style.cssText += "background-color: black;";
-//         console.log(e);
-//     })
-// });
 
 
 
