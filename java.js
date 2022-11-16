@@ -28,24 +28,43 @@ const sketchContainer = document.querySelector("#sketch-container");
 
 /* -------------Functions------------------*/
 
+// Size of the grid
+
+function size(size) {
+    size = prompt("Please define your grid size", 24)
+    while (size > 100 || size != parseFloat) {
+        alert("Please insert a number between 2-100");
+        size = prompt("Please define your grid size", 24);
+    }
+    return Number(size);
+};
+
+
+
+let gridSize = size();
+
 // Creates the grid
 
 let div;
-function createGrid (e) {
-    for (let i = 0; i < Math.pow(e, 2); i++) {
+
+
+function createGrid (gridSize) {
+    for (let i = 0; i < Math.pow(gridSize, 2); i++) {
         div = document.createElement('div');
         sketchContainer.appendChild(div);
         div.classList.add('square');
-        let width = 600/e;
-        let height = 600/e;
+        let width = 600/gridSize;
+        let height = 600/gridSize;
         div.style.height = `${height}px`;
         div.style.width += `${width}px`;
         div.addEventListener('mouseover', function (e){
             e.target.style.backgroundColor = 'black';
         })
-    }   
-    
-}
+    }
+};
+
+createGrid(gridSize);
+
 // Erase button
 
 
@@ -62,7 +81,7 @@ eraser.addEventListener('click', erase);
 
 
 
-createGrid(24);
+
 
 
 
