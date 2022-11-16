@@ -20,8 +20,8 @@
 
 const pencilColor = document.getElementById("color-picker");
 const rainbow = document.querySelector("rainbow");
-const eraser = document.querySelector("#eraser");
-const clear = document.querySelector("#clear-all");
+const clear = document.querySelector("#clear");
+const eraser = document.querySelector("#clear-all");
 const sketchContainer = document.querySelector("#sketch-container");
 
 
@@ -32,22 +32,19 @@ const sketchContainer = document.querySelector("#sketch-container");
 
 function size(size) {
     size = prompt("Please define your grid size", 24)
-    while (size > 100 || size != parseFloat) {
+    size = Number(size);
+    while (size > 100) {
         alert("Please insert a number between 2-100");
         size = prompt("Please define your grid size", 24);
     }
-    return Number(size);
+    return size;
 };
-
-
 
 let gridSize = size();
 
 // Creates the grid
 
 let div;
-
-
 function createGrid (gridSize) {
     for (let i = 0; i < Math.pow(gridSize, 2); i++) {
         div = document.createElement('div');
@@ -72,10 +69,10 @@ function erase() {
     while (sketchContainer.firstChild) {
         sketchContainer.removeChild(sketchContainer.firstChild);
     }
-    createGrid(24);
+    createGrid(gridSize);
 };
 
-eraser.addEventListener('click', erase);
+clear.addEventListener('click', erase);
 
 // 
 
