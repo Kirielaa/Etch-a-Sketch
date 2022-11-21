@@ -44,6 +44,13 @@ h4 {
     margin-left: 1rem;
 }
 
+#rainbow {
+    width: 4em;
+    height: 1.5em;
+    margin-top: 1.2em;
+    margin-left: 0.5em;
+}
+
 #color-picker {
     align-self: center;
 }
