@@ -19,7 +19,7 @@
 
 
 const pencilColor = document.getElementById("color-picker");
-const rainbow = document.querySelector("rainbow");
+const rainbow = document.getElementById("rainbow");
 const clear = document.querySelector("#clear");
 const eraser = document.querySelector("#eraser");
 const sketchContainer = document.querySelector("#sketch-container");
@@ -66,7 +66,6 @@ createGrid(gridSize);
 
 // Clear button
 
-
 function erase() {
     while (sketchContainer.firstChild) {
         sketchContainer.removeChild(sketchContainer.firstChild);
@@ -78,13 +77,40 @@ clear.addEventListener('click', erase);
 
 // Eraser Button
 
+
+
 function clean() {
-            const divs = document.querySelectorAll("#sketch-container > div");
-            divs.forEach((div) => {
-            div.addEventListener('mouseover', function (e){
-            // console.log(e);
-            e.target.style.backgroundColor = 'white';
+    const divs = document.querySelectorAll("#sketch-container > div");
+    divs.forEach((div) => {
+        div.addEventListener('mouseover', function (e){
+        // console.log(e);
+        e.target.style.backgroundColor = 'white';
         });
     });
 };
+
 eraser.addEventListener('click', clean);
+
+// Rainbow Button
+
+function randomColor() {
+    const color = ['#FF0000', '#FFA500', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8F00FF'];
+    const rainbow = color[Math.floor(Math.random() * color.length)];
+    return rainbow;
+};
+
+function random() {
+    const divs = document.querySelectorAll("#sketch-container > div");
+    divs.forEach((div) => {
+        div.addEventListener('mouseover', function (e){
+        console.log(e);
+        e.target.style.backgroundColor = randomColor();
+        });
+    });
+};
+
+rainbow.addEventListener('click', random);
+// rainbow.addEventListener('click', () => { 
+//     let hi = alert("hi");
+//     return hi;
+// });

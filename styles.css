@@ -12,15 +12,18 @@ h1 {
 
 body {
     background-color: #2E2E2E;
+    min-height: 100vh
 }
 
 h1 {
+    margin-top: 2rem;
     text-align: center;
-    margin: 5rem;
+    
 }
 
-body {
-    min-height: 100vh;
+h4 {
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
 .pencil-container,
@@ -34,6 +37,7 @@ body {
     background-color: #94958b;
     box-shadow: 0 0 1rem rgb(131, 131, 131);
     border-radius: 1rem;
+    height: 200px;
 }
 
 .options-container > * {
