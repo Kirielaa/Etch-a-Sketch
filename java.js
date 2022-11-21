@@ -17,14 +17,11 @@
 
 /*---------------Variables--------------- */
 
-
 const pencilColor = document.getElementById("color-picker");
 const rainbow = document.getElementById("rainbow");
 const clear = document.querySelector("#clear");
 const eraser = document.querySelector("#eraser");
 const sketchContainer = document.querySelector("#sketch-container");
-
-
 
 /* -------------Functions------------------*/
 
@@ -33,7 +30,7 @@ const sketchContainer = document.querySelector("#sketch-container");
 function size(size) {
     size = prompt("Please define your grid size", 24)
     size = Number(size);
-    while (size > 100) {
+    while (size <= 1 || size > 100) {
         alert("Please insert a number between 2-100");
         size = prompt("Please define your grid size", 24);
     }
@@ -43,8 +40,6 @@ function size(size) {
 let gridSize = size();
 
 // Creates the grid
-
-
 
 function createGrid (gridSize) {
     for (let i = 0; i < Math.pow(gridSize, 2); i++) {
@@ -77,8 +72,6 @@ clear.addEventListener('click', erase);
 
 // Eraser Button
 
-
-
 function clean() {
     const divs = document.querySelectorAll("#sketch-container > div");
     divs.forEach((div) => {
@@ -93,12 +86,14 @@ eraser.addEventListener('click', clean);
 
 // Rainbow Button
 
+/* This function picks a random color from a array */
 function randomColor() {
     const color = ['#FF0000', '#FFA500', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8F00FF'];
     const rainbow = color[Math.floor(Math.random() * color.length)];
     return rainbow;
 };
 
+/* This function adds a event listener to all the divs and applies the random color from the function above */
 function random() {
     const divs = document.querySelectorAll("#sketch-container > div");
     divs.forEach((div) => {
@@ -110,7 +105,3 @@ function random() {
 };
 
 rainbow.addEventListener('click', random);
-// rainbow.addEventListener('click', () => { 
-//     let hi = alert("hi");
-//     return hi;
-// });
