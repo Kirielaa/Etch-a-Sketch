@@ -21,7 +21,7 @@
 const pencilColor = document.getElementById("color-picker");
 const rainbow = document.querySelector("rainbow");
 const clear = document.querySelector("#clear");
-const eraser = document.querySelector("#clear-all");
+const eraser = document.querySelector("#eraser");
 const sketchContainer = document.querySelector("#sketch-container");
 
 
@@ -44,7 +44,8 @@ let gridSize = size();
 
 // Creates the grid
 
-let div;
+
+
 function createGrid (gridSize) {
     for (let i = 0; i < Math.pow(gridSize, 2); i++) {
         div = document.createElement('div');
@@ -62,7 +63,8 @@ function createGrid (gridSize) {
 
 createGrid(gridSize);
 
-// Erase button
+
+// Clear button
 
 
 function erase() {
@@ -74,16 +76,15 @@ function erase() {
 
 clear.addEventListener('click', erase);
 
-// 
+// Eraser Button
 
-
-
-
-
-
-
-
-
-
-
-
+function clean() {
+            const divs = document.querySelectorAll("#sketch-container > div");
+            divs.forEach((div) => {
+            div.addEventListener('mouseover', function (e){
+            // console.log(e);
+            e.target.style.backgroundColor = 'white';
+        });
+    });
+};
+eraser.addEventListener('click', clean);
