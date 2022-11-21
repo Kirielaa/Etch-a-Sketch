@@ -75,3 +75,16 @@ h4 {
     border: 1px solid black;
     background-color: red;
 }
+
+@media only screen and (max-width: 900px) {
+
+    .main-container {
+        flex-wrap: wrap;
+        margin: 0 5px 10px 5px;
+    }
+
+    body {
+        min-width: 1000px;
+        height: 800px;
+    }
+}
