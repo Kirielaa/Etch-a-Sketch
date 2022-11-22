@@ -22,22 +22,20 @@ const rainbow = document.getElementById("rainbow");
 const clear = document.querySelector("#clear");
 const eraser = document.querySelector("#eraser");
 const sketchContainer = document.querySelector("#sketch-container");
+const gridSlider = document.querySelector("#grid-slider");
 
 /* -------------Functions------------------*/
 
-// Size of the grid
+//Function for the grid Slider.
 
-function size(size) {
-    size = prompt("Please define your grid size", 24)
-    size = Number(size);
-    while (size <= 1 || size > 100) {
-        alert("Please insert a number between 2-100");
-        size = prompt("Please define your grid size", 24);
+gridSlider.addEventListener('change', () => {
+    while (sketchContainer.firstChild) {
+        sketchContainer.removeChild(sketchContainer.firstChild);
     }
-    return size;
-};
+    createGrid(gridSlider.value);
+});
 
-let gridSize = size();
+let gridSize = gridSlider.value;
 
 // Creates the grid
 
@@ -65,7 +63,7 @@ function erase() {
     while (sketchContainer.firstChild) {
         sketchContainer.removeChild(sketchContainer.firstChild);
     }
-    createGrid(gridSize);
+    createGrid(gridSlider.value);
 };
 
 clear.addEventListener('click', erase);
@@ -98,10 +96,27 @@ function random() {
     const divs = document.querySelectorAll("#sketch-container > div");
     divs.forEach((div) => {
         div.addEventListener('mouseover', function (e){
-        console.log(e);
+        // console.log(e);
         e.target.style.backgroundColor = randomColor();
         });
     });
 };
 
 rainbow.addEventListener('click', random);
+
+// Pencil Color option
+
+//Function that detects the color the user picked
+
+function colorPencil() {
+    const divs = document.querySelectorAll("#sketch-container > div");
+    divs.forEach ((div) => {
+        div.addEventListener('mouseover', function (e){
+            let color = pencilColor.value;
+            e.target.style.backgroundColor = color;
+        })
+    })
+};
+
+pencilColor.addEventListener('input', colorPencil); 
+
