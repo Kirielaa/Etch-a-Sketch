@@ -56,7 +56,6 @@ function createGrid (gridSize) {
 
 createGrid(gridSize);
 
-
 // Clear button
 
 function erase() {
@@ -107,7 +106,6 @@ rainbow.addEventListener('click', random);
 // Pencil Color option
 
 //Function that detects the color the user picked
-
 function colorPencil() {
     const divs = document.querySelectorAll("#sketch-container > div");
     divs.forEach ((div) => {

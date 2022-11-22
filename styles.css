@@ -16,8 +16,8 @@ body {
 }
 
 h1 {
-    margin-top: 2rem;
     text-align: center;
+    margin: 2rem;
 }
 
 /* h4 {
@@ -36,7 +36,9 @@ h1 {
     background-color: #94958b;
     box-shadow: 0 0 1rem rgb(131, 131, 131);
     border-radius: 1rem;
-    height: 200px;
+    height: fit-content;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .options-container > * {
@@ -87,10 +89,5 @@ h1 {
     .main-container {
         flex-wrap: wrap;
         margin: 0 5px 10px 5px;
-    }
-
-    body {
-        min-width: 1000px;
-        height: 800px;
     }
 }
